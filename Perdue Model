@@ -1,0 +1,65 @@
+```mermaid
+graph TD
+    A[Property] --> B[Event]
+    B --> C[Resource]
+    C --> D[Dynamics]
+    D --> E[Use case]
+    E --> F[Environment]
+
+    %% Properties
+    subgraph Properties
+        PA[PLC]
+        PB[DCS]
+        PC[Switch]
+        PD[Router]
+        PE[Instrument]
+    end
+    A --> PA
+    A --> PB
+    A --> PC
+    A --> PD
+    A --> PE
+
+    %% Events
+    subgraph Events
+        EA[Data Capture]
+        EB[Control Signal]
+    end
+    B --> EA
+    B --> EB
+
+    %% Resources
+    subgraph Resources
+        RA[MES]
+        RB[QCS]
+    end
+    C --> RA
+    C --> RB
+
+    %% Dynamics
+    subgraph Dynamics
+        DA[Data Processing]
+        DB[Signal Processing]
+    end
+    D --> DA
+    D --> DB
+
+    %% Use cases
+    subgraph UseCases
+        UA[Production Monitoring]
+        UB[Quality Control]
+        UC[Maintenance]
+    end
+    E --> UA
+    E --> UB
+    E --> UC
+
+    %% Environment
+    subgraph Environment
+        ENA[Factory Floor]
+        ENB[Control Room]
+        ENC[DMZ]
+    end
+    F --> ENA
+    F --> ENB
+    F --> ENC
